@@ -11,7 +11,7 @@ const AboutMe = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-10 lg:mb-2">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white">
             About <span className="text-indigo-400">Me</span>
           </h2>
           <p className="mt-3 text-gray-400 max-w-2xl mx-auto">

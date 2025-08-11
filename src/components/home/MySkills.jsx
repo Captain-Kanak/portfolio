@@ -65,8 +65,8 @@ const MySkills = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Description */}
         <div className="max-w-3xl mx-auto mb-12 text-center">
-          <h3 className="text-4xl font-semibold text-white mb-4">
-            Essential Tools I Use
+          <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <span className="text-indigo-400">Essential</span> Tools I Use
           </h3>
           <p className="text-gray-400 text-lg leading-relaxed">
             Here are the technologies, tools, and frameworks I work with to
@@ -76,7 +76,7 @@ const MySkills = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
           {skills.map(({ icon, title, desc }) => (
             <div
               key={title}

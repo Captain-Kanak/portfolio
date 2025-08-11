@@ -9,7 +9,7 @@ import {
 } from "react-icons/si";
 
 const Hero = () => {
-  const name = "Kanak Ray";
+  const name = "I'm Kanak";
   const title = "Full-Stack Web Developer";
   const tagline = "I build fast, accessible & maintainable web applications.";
   const resumeUrl = "#";
@@ -45,7 +45,7 @@ const Hero = () => {
           {/* Left: text */}
           <div className="order-2 lg:order-1 lg:col-span-7">
             <p className="inline-block rounded-full px-3 py-1 text-sm font-medium bg-gradient-to-r from-indigo-600 to-teal-500 text-white shadow-sm">
-              Hi, I’m a web developer
+              Passionate Web Developer
             </p>
 
             <h1
@@ -86,10 +86,10 @@ const Hero = () => {
                 {skills.map(({ name, icon }, i) => (
                   <li
                     key={i}
-                    className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800/60 text-sm text-gray-200 font-medium"
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-gray-800 to-gray-700 text-sm text-gray-200 font-medium shadow-sm"
                   >
                     {icon}
-                    {name}
+                    <span>{name}</span>
                   </li>
                 ))}
               </ul>
