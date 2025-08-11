@@ -12,10 +12,10 @@ const Hero = () => {
 
   return (
     <section
-      className="mt-8 lg:mt-16 relative overflow-hidden"
+      className="py-8 lg:py-16 relative overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: text */}
           <div className="order-2 lg:order-1 lg:col-span-7">

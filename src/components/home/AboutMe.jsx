@@ -1,0 +1,82 @@
+import React from "react";
+import developerLottie from "../../assets/lotties/developer.json";
+import Lottie from "lottie-react";
+
+const AboutMe = () => {
+  return (
+    <section
+      id="about"
+      className="py-8 lg:py-16 relative bg-gradient-to-b from-gray-900 to-gray-950"
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            About <span className="text-indigo-400">Me</span>
+          </h2>
+          <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
+            I’m a passionate full-stack developer who loves building
+            high-performance, scalable, and user-friendly applications. My goal
+            is to turn ideas into real-life products that help people and
+            businesses succeed.
+          </p>
+        </div>
+
+        {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* Left: Story */}
+          <div className="space-y-5">
+            <p className="text-gray-300 leading-relaxed">
+              My programming journey began in{" "}
+              <span className="text-indigo-400 font-medium">2020</span>. I still
+              remember the excitement and curiosity I felt when I wrote my very
+              first lines of code. Back then, I didn’t have much knowledge or
+              experience — just a laptop, an internet connection, and a strong
+              desire to learn.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              The path was far from easy. I spent countless late nights
+              studying, debugging, and building small projects to test my
+              skills. I explored different technologies, broke things, fixed
+              them, and learned something new every day. My dedication and hard
+              work slowly turned my passion into a professional skill set.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Today, I’m proud to say that my persistence has paid off. I’ve
+              worked on a variety of projects, from simple websites to complex
+              full-stack applications, and I’m constantly seeking ways to
+              improve. Programming is no longer just a skill for me — it’s a
+              craft that I refine with every line of code I write.
+            </p>
+          </div>
+
+          {/* Right: Lottie animation */}
+          <div className="flex justify-center lg:justify-end">
+            <Lottie
+              animationData={developerLottie}
+              loop={true}
+              className="w-72 sm:w-96"
+            />
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-12 text-center">
+          <a
+            href="#contact"
+            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hover:scale-[1.02] transform transition"
+          >
+            Let’s Work Together
+          </a>
+        </div>
+      </div>
+
+      {/* Decorative Background Blur */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl"></div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutMe;
