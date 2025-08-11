@@ -1,5 +1,5 @@
 import React from "react";
-import developerLottie from "../../assets/lotties/developer.json";
+import codingLottie from "../../assets/lotties/coding.json";
 import Lottie from "lottie-react";
 
 const AboutMe = () => {
@@ -10,21 +10,19 @@ const AboutMe = () => {
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 lg:mb-2">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
             About <span className="text-indigo-400">Me</span>
           </h2>
           <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
             I’m a passionate full-stack developer who loves building
-            high-performance, scalable, and user-friendly applications. My goal
-            is to turn ideas into real-life products that help people and
-            businesses succeed.
+            high-performance, scalable, and user-friendly applications.
           </p>
         </div>
 
         {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          {/* Left: Story */}
+          {/* Left */}
           <div className="space-y-5">
             <p className="text-gray-300 leading-relaxed">
               My programming journey began in{" "}
@@ -50,18 +48,14 @@ const AboutMe = () => {
             </p>
           </div>
 
-          {/* Right: Lottie animation */}
+          {/* Right: Lottie animation loads only when in view */}
           <div className="flex justify-center lg:justify-end">
-            <Lottie
-              animationData={developerLottie}
-              loop={true}
-              className="w-72 sm:w-96"
-            />
+            <Lottie animationData={codingLottie} />
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-12 text-center">
+        {/* CTA */}
+        <div className="mt-8 text-center">
           <a
             href="#contact"
             className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hover:scale-[1.02] transform transition"
@@ -71,9 +65,9 @@ const AboutMe = () => {
         </div>
       </div>
 
-      {/* Decorative Background Blur */}
+      {/* Decorative background blur */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl"></div>
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-indigo-600/20 blur-2xl"></div>
       </div>
     </section>
   );
