@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router";
-import medicalCamp from "../../assets/projects/medical-camp.png";
-import foundLostItems from "../../assets/projects/found-lost-items.png";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner";
+import ProjectCard from "../ProjectCard";
 
 const RecentProjects = () => {
   const axiosPublic = useAxiosPublic();
 
-  const { data: projectsData, isLoading } = useQuery({
+  const { data: projectsData = [], isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const res = await axiosPublic.get("/projects");
@@ -17,28 +16,7 @@ const RecentProjects = () => {
     },
   });
 
-  console.log(projectsData);
-
-  const projects = [
-    {
-      id: 1,
-      title: "Lost & Found Web App",
-      desc: "A platform for posting and recovering lost items with MongoDB and React.",
-      img: foundLostItems,
-    },
-    {
-      id: 2,
-      title: "Medical Camp Management",
-      desc: "A system for organizing and registering for medical camps.",
-      img: medicalCamp,
-    },
-    {
-      id: 3,
-      title: "Parcel Delivery System",
-      desc: "A delivery management system with Stripe payments and Firebase Auth.",
-      img: "/path/to/project3.jpg",
-    },
-  ];
+  const projects = projectsData.slice(0, 3);
 
   if (isLoading) <Spinner />;
 
@@ -58,29 +36,8 @@ const RecentProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((project) => (
-            <div
-              key={project.id}
-              className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-indigo-600/50 transform hover:scale-105 transition duration-300"
-            >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-5">
-                <h4 className="text-white text-xl font-semibold mb-2">
-                  {project.title}
-                </h4>
-                <p className="text-gray-400 text-sm mb-4">{project.desc}</p>
-                <Link
-                  to={"/"}
-                  className="inline-block px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 transition-colors"
-                >
-                  View Project
-                </Link>
-              </div>
-            </div>
+          {projects.map((project) => (
+            <ProjectCard key={project._id} project={project} />
           ))}
         </div>
 
