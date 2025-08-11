@@ -63,7 +63,7 @@ const Hero = () => {
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-3">
               <a
                 href={resumeUrl}
-                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition"
+                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer"
                 aria-label="Download resume"
               >
                 Download Resume

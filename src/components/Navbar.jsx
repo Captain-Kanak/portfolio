@@ -33,6 +33,20 @@ const Navbar = () => {
           Projects
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `relative text-lg font-medium tracking-wide px-3 py-2 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:transition-all after:duration-300 ${
+              isActive
+                ? "text-primary after:w-full after:bg-primary"
+                : "text-gray-300 hover:text-primary after:w-0 hover:after:w-full after:bg-primary"
+            }`
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
     </>
   );
 
@@ -81,9 +95,9 @@ const Navbar = () => {
 
         {/* Right */}
         <div className="navbar-end">
-          <a className="btn btn-primary rounded-full shadow-md hover:shadow-lg transition lg:text-lg">
+          <button className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 lg:px-5 py-2 lg:py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer">
             Resume
-          </a>
+          </button>
         </div>
       </div>
     </nav>

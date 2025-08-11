@@ -5,12 +5,12 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 text-gray-400 py-16">
+    <footer className="bg-gray-950 text-gray-400 py-8 lg:py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 mb-8">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-16 mb-8">
           {/* About */}
-          <div>
+          <div className="max-w-md">
             <span>
               <Logo />
             </span>
