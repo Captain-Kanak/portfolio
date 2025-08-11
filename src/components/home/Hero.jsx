@@ -3,7 +3,7 @@ import imageSrc from "../../assets/hero/hero.png";
 import { Link } from "react-router";
 import { IoEyeOutline } from "react-icons/io5";
 import { FiDownload } from "react-icons/fi";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Hero = () => {
   const name = "I'm Kanak";
@@ -120,6 +120,15 @@ const Hero = () => {
                   aria-label="Twitter"
                 >
                   <FaTwitter size={24} />
+                </a>
+                <a
+                  href="https://facebook.com/captainkanak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-indigo-400 transition"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook size={24} />
                 </a>
               </div>
             </div>

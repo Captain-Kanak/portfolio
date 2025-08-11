@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Logo from "./Logo";
 
 const Footer = () => {
@@ -56,23 +56,45 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Social Links
+            </h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/Captain-Kanak"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-indigo-400 transition-colors"
+                className="text-gray-300 hover:text-indigo-400 transition"
+                aria-label="GitHub"
               >
-                <FaGithub className="text-2xl" />
+                <FaGithub size={24} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/captain-kanak"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-indigo-400 transition-colors"
+                className="text-gray-300 hover:text-indigo-400 transition"
+                aria-label="LinkedIn"
               >
-                <FaLinkedin className="text-2xl" />
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://twitter.com/captain_kanak00"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-indigo-400 transition"
+                aria-label="Twitter"
+              >
+                <FaTwitter size={24} />
+              </a>
+              <a
+                href="https://facebook.com/captainkanak"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-indigo-400 transition"
+                aria-label="Facebook"
+              >
+                <FaFacebook size={24} />
               </a>
             </div>
           </div>

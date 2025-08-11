@@ -83,7 +83,7 @@ const MySkills = () => {
           {skills.map(({ icon, title, desc }) => (
             <div
               key={title}
-              className="flex items-center gap-4 p-4 bg-gray-800/70 rounded-xl border border-gray-700 shadow-lg hover:shadow-indigo-600/50 transform hover:scale-105 transition-transform duration-300 cursor-default"
+              className="flex items-center gap-4 p-3 bg-gray-800/70 rounded-xl border border-gray-700 shadow-lg hover:shadow-indigo-600/50 transform hover:scale-105 transition-transform duration-300 cursor-default"
             >
               <div className="bg-gray-700 p-3 rounded-lg flex-shrink-0 flex items-center justify-center">
                 {icon}

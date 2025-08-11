@@ -21,9 +21,9 @@ const AboutMe = () => {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
           {/* Left */}
-          <div className="space-y-5">
+          <div className="space-y-4">
             <p className="text-gray-300 leading-relaxed">
               My programming journey began in{" "}
               <span className="text-indigo-400 font-medium">2020</span>. I still
@@ -45,6 +45,13 @@ const AboutMe = () => {
               full-stack applications, and I’m constantly seeking ways to
               improve. Programming is no longer just a skill for me — it’s a
               craft that I refine with every line of code I write.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              When I’m not coding, I enjoy playing chess and cricket. These
+              hobbies keep my mind sharp and teach me patience, strategy, and
+              teamwork — qualities I bring back to my work as a developer.
+              Whether it’s a challenging game of chess or a friendly cricket
+              match, I love staying active and engaged outside of programming.
             </p>
           </div>
 
