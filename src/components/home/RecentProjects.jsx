@@ -18,7 +18,9 @@ const RecentProjects = () => {
 
   const projects = projectsData.slice(0, 3);
 
-  if (isLoading) <Spinner />;
+  if (isLoading) {
+    <Spinner />;
+  }
 
   return (
     <section className="py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 mt-1">
