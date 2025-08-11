@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import { IoEyeOutline } from "react-icons/io5";
 import { FiDownload } from "react-icons/fi";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const name = "I'm Kanak";
@@ -20,9 +22,24 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: text */}
           <div className="order-2 lg:order-1 lg:col-span-7">
-            <p className="inline-block rounded-full px-3 py-1 text-sm font-medium bg-gradient-to-r from-indigo-600 to-teal-500 text-white shadow-sm">
+            <motion.p
+              className="inline-block rounded-full px-4 py-2 text-sm font-medium text-white shadow-sm"
+              style={{
+                background:
+                  "linear-gradient(270deg, #4f46e5, #14b8a6, #4f46e5)",
+                backgroundSize: "300% 300%",
+              }}
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
               Passionate Web Developer
-            </p>
+            </motion.p>
 
             <h1
               id="hero-heading"
@@ -41,25 +58,25 @@ const Hero = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-1"
+                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-2"
               >
-                <IoEyeOutline size={20} /> View Resume
+                <IoEyeOutline size={20} /> Resume
               </a>
               <a
                 href="/resume.pdf"
                 download="Kanak_Resume.pdf"
                 aria-label="Download resume"
-                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-1"
+                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-2"
               >
-                <FiDownload size={20} /> Download Resume
+                <FiDownload size={20} /> Resume
               </a>
 
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center rounded-md border border-gray-700 px-4 py-3 text-base font-medium text-gray-200 hover:bg-gray-800/60 transition gap-1"
+                className="inline-flex items-center justify-center rounded-md border border-gray-700 px-4 py-3 text-base font-medium text-gray-200 hover:bg-gray-800/60 transition gap-2"
                 aria-label="See projects"
               >
-                <IoEyeOutline size={20} /> View Projects
+                <IoEyeOutline size={20} /> Projects
               </Link>
             </div>
 
@@ -136,7 +153,23 @@ const Hero = () => {
 
           {/* Right: hero image */}
           <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-lg rounded-full overflow-hidden ring-1 ring-white/6 shadow-2xl bg-gradient-to-tr from-gray-800/50 to-gray-900/60 p-2 border-4 border-blue-500">
+            <motion.div
+              className="w-full max-w-lg rounded-full overflow-hidden ring-1 ring-white/6 shadow-2xl bg-gradient-to-tr from-gray-800/50 to-gray-900/60 p-2 border-5"
+              animate={{
+                borderColor: [
+                  "#3b82f6",
+                  "#9333ea",
+                  "#06b6d4",
+                  "#f472b6",
+                  "#3b82f6",
+                ],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
               <img
                 src={imageSrc}
                 width="500"
@@ -144,7 +177,7 @@ const Hero = () => {
                 alt={imageAlt}
                 className="w-full object-cover rounded-full block"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
