@@ -2,9 +2,23 @@ import React from "react";
 import { Link } from "react-router";
 import medicalCamp from "../../assets/projects/medical-camp.png";
 import foundLostItems from "../../assets/projects/found-lost-items.png";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "../Spinner";
 
 const RecentProjects = () => {
-  // Replace with your own project details
+  const axiosPublic = useAxiosPublic();
+
+  const { data: projectsData, isLoading } = useQuery({
+    queryKey: ["projects"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/projects");
+      return res.data;
+    },
+  });
+
+  console.log(projectsData);
+
   const projects = [
     {
       id: 1,
@@ -25,6 +39,8 @@ const RecentProjects = () => {
       img: "/path/to/project3.jpg",
     },
   ];
+
+  if (isLoading) <Spinner />;
 
   return (
     <section className="py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 mt-1">
@@ -57,7 +73,10 @@ const RecentProjects = () => {
                   {project.title}
                 </h4>
                 <p className="text-gray-400 text-sm mb-4">{project.desc}</p>
-                <Link to={"/"} className="inline-block px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 transition-colors">
+                <Link
+                  to={"/"}
+                  className="inline-block px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 transition-colors"
+                >
                   View Project
                 </Link>
               </div>
