@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import { NavLink } from "react-router";
+import { IoEyeOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const links = (
@@ -95,9 +96,14 @@ const Navbar = () => {
 
         {/* Right */}
         <div className="navbar-end">
-          <button className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 lg:px-5 py-2 lg:py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer">
-            Resume
-          </button>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 lg:px-5 py-2 lg:py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-1"
+          >
+            <IoEyeOutline size={20} /> View Resume
+          </a>
         </div>
       </div>
     </nav>

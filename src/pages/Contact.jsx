@@ -23,15 +23,15 @@ const Contact = () => {
               <FaEnvelope className="text-indigo-400 text-3xl" />
               <div>
                 <h4 className="text-white font-semibold text-lg">Email</h4>
-                <p className="text-gray-300">youremail@example.com</p>
+                <p className="text-gray-300">kanakroy835@gmail.com</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4 bg-gray-800/60 p-5 rounded-xl hover:shadow-lg hover:shadow-indigo-600/30 transition">
               <FaPhoneAlt className="text-indigo-400 text-3xl" />
               <div>
-                <h4 className="text-white font-semibold text-lg">Phone</h4>
-                <p className="text-gray-300">+880 1234 567 890</p>
+                <h4 className="text-white font-semibold text-lg">WhatsApp</h4>
+                <p className="text-gray-300">+880 1704 210 835</p>
               </div>
             </div>
 
@@ -39,7 +39,7 @@ const Contact = () => {
               <FaMapMarkerAlt className="text-indigo-400 text-3xl" />
               <div>
                 <h4 className="text-white font-semibold text-lg">Location</h4>
-                <p className="text-gray-300">Dhaka, Bangladesh</p>
+                <p className="text-gray-300">Rangpur, Bangladesh</p>
               </div>
             </div>
           </div>

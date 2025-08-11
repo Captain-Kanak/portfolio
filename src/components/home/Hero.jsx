@@ -1,39 +1,15 @@
 import React from "react";
 import imageSrc from "../../assets/hero/hero.png";
 import { Link } from "react-router";
-import {
-  SiReact,
-  SiNodedotjs,
-  SiTypescript,
-  SiTailwindcss,
-} from "react-icons/si";
+import { IoEyeOutline } from "react-icons/io5";
+import { FiDownload } from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Hero = () => {
   const name = "I'm Kanak";
   const title = "Full-Stack Web Developer";
   const tagline = "I build fast, accessible & maintainable web applications.";
-  const resumeUrl = "#";
   const imageAlt = "Portrait of the developer";
-
-  // Map skills
-  const skills = [
-    {
-      name: "React",
-      icon: <SiReact className="text-teal-400 w-5 h-5 mr-1" />,
-    },
-    {
-      name: "Node.js",
-      icon: <SiNodedotjs className="text-green-500 w-5 h-5 mr-1" />,
-    },
-    {
-      name: "TypeScript",
-      icon: <SiTypescript className="text-blue-600 w-5 h-5 mr-1" />,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: <SiTailwindcss className="text-cyan-400 w-5 h-5 mr-1" />,
-    },
-  ];
 
   return (
     <section
@@ -62,37 +38,90 @@ const Hero = () => {
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-3">
               <a
-                href={resumeUrl}
-                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer"
-                aria-label="Download resume"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-1"
               >
-                Download Resume
+                <IoEyeOutline size={20} /> View Resume
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Kanak_Resume.pdf"
+                aria-label="Download resume"
+                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-1"
+              >
+                <FiDownload size={20} /> Download Resume
               </a>
 
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center rounded-md border border-gray-700 px-4 py-3 text-base font-medium text-gray-200 hover:bg-gray-800/60 transition"
+                className="inline-flex items-center justify-center rounded-md border border-gray-700 px-4 py-3 text-base font-medium text-gray-200 hover:bg-gray-800/60 transition gap-1"
                 aria-label="See projects"
               >
-                View Projects
+                <IoEyeOutline size={20} /> View Projects
               </Link>
             </div>
 
             <div className="mt-8">
-              <h3 className="text-sm font-semibold text-gray-300">
-                Core skills
+              <h3 className="text-lg font-semibold text-gray-300">
+                Connect With Me
               </h3>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {skills.map(({ name, icon }, i) => (
-                  <li
-                    key={i}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-gray-800 to-gray-700 text-sm text-gray-200 font-medium shadow-sm"
+
+              {/* Contact Details */}
+              <ul className="mt-3 space-y-2 text-gray-300">
+                <li>
+                  <span className="font-medium">📧 Email:</span>{" "}
+                  <a
+                    href="mailto:kanakroy835@gmail.com"
+                    className="text-indigo-400 hover:underline"
                   >
-                    {icon}
-                    <span>{name}</span>
-                  </li>
-                ))}
+                    kanakroy835@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <span className="font-medium">💬 WhatsApp:</span>{" "}
+                  <a
+                    href="https://wa.me/8801704210835"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-400 hover:underline"
+                  >
+                    +880 1704-210-835
+                  </a>
+                </li>
               </ul>
+
+              {/* Social Links */}
+              <div className="mt-4 flex items-center gap-4">
+                <a
+                  href="https://github.com/Captain-Kanak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-indigo-400 transition"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={24} />
+                </a>
+                <a
+                  href="https://linkedin.com/in/captain-kanak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-indigo-400 transition"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin size={24} />
+                </a>
+                <a
+                  href="https://twitter.com/captain_kanak00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-indigo-400 transition"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter size={24} />
+                </a>
+              </div>
             </div>
           </div>
 

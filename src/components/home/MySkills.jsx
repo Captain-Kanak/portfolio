@@ -61,7 +61,10 @@ const skills = [
 
 const MySkills = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900">
+    <section
+      id="skills"
+      className="py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900"
+    >
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Description */}
         <div className="max-w-3xl mx-auto mb-12 text-center">
