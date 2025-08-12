@@ -30,7 +30,7 @@ const RecentProjects = () => {
           <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             Recent <span className="text-indigo-400">Projects</span>
           </h3>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Here are a few of my latest works. Each project reflects my skills
             in building modern, responsive, and functional web applications.
           </p>
@@ -47,7 +47,7 @@ const RecentProjects = () => {
         <div className="text-center mt-10">
           <Link
             to="/projects"
-            className="px-6 py-3 text-lg font-medium text-white bg-primary rounded-lg hover:bg-primary/80 transition-colors"
+            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hover:scale-[1.02] transform transition"
           >
             View All Projects
           </Link>

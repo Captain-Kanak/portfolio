@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { IoSend } from "react-icons/io5";
 
 const Contact = () => {
   return (
@@ -7,10 +8,10 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Get In Touch
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Get In <span className="text-indigo-400">Touch</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Have a question, proposal, or just want to say hi? Drop me a message
             and I’ll get back to you as soon as possible.
           </p>
@@ -50,6 +51,7 @@ const Contact = () => {
               <label className="block text-gray-300 mb-2">Name</label>
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
                 className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
@@ -59,6 +61,7 @@ const Contact = () => {
               <label className="block text-gray-300 mb-2">Email</label>
               <input
                 type="email"
+                name="email"
                 placeholder="you@example.com"
                 className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
@@ -68,6 +71,7 @@ const Contact = () => {
               <label className="block text-gray-300 mb-2">Message</label>
               <textarea
                 rows={5}
+                name="message"
                 placeholder="Your Message"
                 className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               ></textarea>
@@ -75,9 +79,9 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md hover:shadow-indigo-500/50 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md hover:shadow-indigo-500/50 transition-all cursor-pointer"
             >
-              Send Message
+              <IoSend size={24} /> Send Message
             </button>
           </form>
         </div>

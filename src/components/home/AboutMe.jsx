@@ -1,6 +1,7 @@
 import React from "react";
 import codingLottie from "../../assets/lotties/coding.json";
 import Lottie from "lottie-react";
+import { Link } from "react-router";
 
 const AboutMe = () => {
   return (
@@ -11,10 +12,10 @@ const AboutMe = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-10 lg:mb-2">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             About <span className="text-indigo-400">Me</span>
           </h2>
-          <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             I’m a passionate full-stack developer who loves building
             high-performance, scalable, and user-friendly applications.
           </p>
@@ -63,12 +64,12 @@ const AboutMe = () => {
 
         {/* CTA */}
         <div className="mt-8 text-center">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hover:scale-[1.02] transform transition"
           >
             Let’s Work Together
-          </a>
+          </Link>
         </div>
       </div>
 

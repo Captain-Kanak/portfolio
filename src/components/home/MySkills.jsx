@@ -73,7 +73,7 @@ const MySkills = () => {
           <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             <span className="text-indigo-400">Tech</span> Stack
           </h3>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Here are the technologies, tools, and frameworks I work with to
             build fast, responsive, and modern web applications.
           </p>

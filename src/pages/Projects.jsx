@@ -36,7 +36,9 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">All Projects</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            All <span className="text-indigo-400">Projects</span>
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Here’s a collection of my work — each project demonstrates a mix of
             design, development, and problem-solving skills.
