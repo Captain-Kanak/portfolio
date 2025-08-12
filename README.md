@@ -5,8 +5,7 @@ This repository contains the source code for my personal portfolio website where
 ## 🚀 About The Project
 
 This portfolio website is a fully responsive, modern web application built to highlight my professional work and skills.  
-It features sections like About Me, Skills, Projects, and Contact.
-
+It features sections like About Me, Skills and Projects.
 ## 🛠️ Built With
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
