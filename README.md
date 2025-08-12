@@ -18,9 +18,6 @@ It features sections like About Me, Skills and Projects.
 ![React Icons](https://img.shields.io/badge/react_icons-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![React Hot Toast](https://img.shields.io/badge/react--hot--toast-F25C54?style=for-the-badge&logo=react&logoColor=white)
 
-> **Dependencies used:**  
-> @tailwindcss/vite, @tanstack/react-query, aos, axios, framer-motion, lottie-react, lucide-react, react, react-dom, react-hot-toast, react-icons, react-router, tailwindcss
-
 ## 🚀 Deployment
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-▶️-brightgreen?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-seven-rust-4cu9pywf9f.vercel.app/)
