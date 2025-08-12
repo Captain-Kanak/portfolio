@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-700">
-      <div className="navbar max-w-7xl mx-auto">
+      <div className="navbar max-w-7xl mx-auto pr-4 lg:pr-0">
         {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -100,7 +100,7 @@ const Navbar = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 lg:px-5 py-2 lg:py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-2"
+            className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-3 lg:px-5 py-2 lg:py-3 text-base font-semibold text-white shadow-lg hover:scale-[1.02] transform transition cursor-pointer gap-2"
           >
             <IoEyeOutline size={20} /> Resume
           </a>

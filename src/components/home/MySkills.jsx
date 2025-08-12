@@ -65,7 +65,7 @@ const MySkills = () => {
   return (
     <section
       id="skills"
-      className="py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900"
+      className="py-8 lg:py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900"
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Description */}
@@ -83,6 +83,7 @@ const MySkills = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
           {skills.map(({ icon, title, desc }) => (
             <motion.div
+              data-aos="zoom-in"
               key={title}
               className="relative rounded-xl p-[2px] overflow-hidden"
               animate={{

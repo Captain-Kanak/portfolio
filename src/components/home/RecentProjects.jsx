@@ -23,7 +23,7 @@ const RecentProjects = () => {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 mt-1">
+    <section className="py-8 lg:py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 mt-1">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
