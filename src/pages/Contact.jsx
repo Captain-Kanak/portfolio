@@ -80,7 +80,7 @@ const Contact = () => {
           {/* Contact Form */}
           <form
             onSubmit={handleMessageSubmit}
-            className="bg-gray-800/60 p-8 rounded-xl shadow-lg space-y-6"
+            className="bg-gray-800/60 p-4 rounded-xl shadow-lg space-y-6"
           >
             <div>
               <label className="block text-gray-300 mb-2">Name</label>
