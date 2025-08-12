@@ -1,8 +1,40 @@
 import React from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const Contact = () => {
+  const axiosPublic = useAxiosPublic();
+
+  const handleMessageSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+
+    const messageData = {
+      name,
+      email,
+      message,
+    };
+
+    try {
+      const res = await axiosPublic.post("/messages", messageData);
+      if (res.data.insertedId) {
+        toast.success(
+          "Your message just made my day! I’ll respond soon. Stay tuned! 🎉📬"
+        );
+        form.reset();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <section className="py-8 lg:py-16 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900">
       <div className="max-w-6xl mx-auto px-4">
@@ -46,7 +78,10 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="bg-gray-800/60 p-8 rounded-xl shadow-lg space-y-6">
+          <form
+            onSubmit={handleMessageSubmit}
+            className="bg-gray-800/60 p-8 rounded-xl shadow-lg space-y-6"
+          >
             <div>
               <label className="block text-gray-300 mb-2">Name</label>
               <input
