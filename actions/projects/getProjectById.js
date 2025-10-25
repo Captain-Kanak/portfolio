@@ -1,18 +1,18 @@
 "use server";
 
-export default async function getProjects() {
+export default async function getProjectById(id) {
   try {
     const response = await fetch(
-      `${process.env.NEXT_SERVER_ADDRESS}/api/projects`
+      `${process.env.NEXT_SERVER_ADDRESS}/api/projects/${id}`
     );
 
     if (!response.ok) {
       return [];
     }
 
-    const projectsData = await response.json();
+    const projectData = await response.json();
 
-    return projectsData;
+    return projectData;
   } catch (error) {
     console.log("Failed to Get Projects", error);
     return [];
