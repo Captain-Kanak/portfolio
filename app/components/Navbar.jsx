@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
@@ -9,6 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
@@ -18,8 +19,27 @@ export default function Navbar() {
     { title: "Contact", url: "/contact" },
   ];
 
+  // Detect scroll to add sticky background + shadow
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 bg-gray-900 shadow-lg border-b border-cyan-600/30 h-16">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-gray-900/80 backdrop-blur-md border-b border-cyan-500/30 shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center py-4 lg:py-5 px-4">
         {/* Logo */}
         <Logo />
@@ -67,7 +87,7 @@ export default function Navbar() {
       <div
         className={`md:hidden ${
           isMobileMenuOpen ? "block" : "hidden"
-        } bg-gray-800 mt-3 rounded-md shadow-md`}
+        } bg-gray-900/95 backdrop-blur-lg mt-2 border-t border-cyan-400/20 shadow-lg`}
       >
         <div className="flex flex-col space-y-3 p-4">
           {navLinks.map((link) => (
