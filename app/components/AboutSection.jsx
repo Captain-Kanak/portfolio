@@ -22,11 +22,18 @@ export default function AboutSection() {
       <div>
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+          <h2
+            data-aos="fade-up"
+            className="text-4xl lg:text-5xl font-extrabold text-white mb-4"
+          >
             About <span className="text-cyan-400">Me</span>{" "}
             {/* Matched color with CTAs */}
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed"
+          >
             {"I'm"} a passionate Full-Stack Developer dedicated to building
             efficient, scalable, and user-centric web applications that solve
             real-world problems.

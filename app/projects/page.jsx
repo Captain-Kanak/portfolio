@@ -17,11 +17,9 @@ export default async function ProjectsPage() {
         "Failed to fetch projects or projects data is not an array:",
         projectsData
       );
-      // You might want to display a user-friendly error message on the page here
     }
   } catch (error) {
     console.error("Error fetching projects:", error);
-    // You might want to display a user-friendly error message on the page here
   }
 
   return (

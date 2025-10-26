@@ -91,10 +91,17 @@ export default function MySkills() {
         {/* Added max-w and px */}
         {/* Section Description */}
         <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h3 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+          <h3
+            data-aos="fade-up"
+            className="text-4xl lg:text-5xl font-extrabold text-white mb-4"
+          >
             My <span className="text-cyan-400">Tech</span> Stack
           </h3>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
+          >
             A comprehensive list of the technologies, tools, and frameworks I
             leverage to build robust, scalable, and intuitive full-stack web
             applications.
