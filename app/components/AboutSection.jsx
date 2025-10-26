@@ -19,7 +19,7 @@ export default function AboutSection() {
         {/* Adjusted color and position */}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div>
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">
@@ -27,7 +27,7 @@ export default function AboutSection() {
             {/* Matched color with CTAs */}
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            I am a passionate Full-Stack Developer dedicated to building
+            {"I'm"} a passionate Full-Stack Developer dedicated to building
             efficient, scalable, and user-centric web applications that solve
             real-world problems.
           </p>
