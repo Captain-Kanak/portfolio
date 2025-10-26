@@ -3,137 +3,93 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
+import { IoCloseSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
-    {
-      title: "Home",
-      url: "/",
-    },
-    {
-      title: "About",
-      url: "/about",
-    },
-    {
-      title: "Projects",
-      url: "/projects",
-    },
-    {
-      title: "Contact",
-      url: "/contact",
-    },
+    { title: "Home", url: "/" },
+    { title: "About", url: "/about" },
+    { title: "Projects", url: "/projects" },
+    { title: "Contact", url: "/contact" },
   ];
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
-    <nav className="bg-gray-800 shadow-lg">
-      <div>
-        <div className="container mx-auto flex justify-between items-center py-4 lg:py-5 px-4">
-          {/* Logo/Brand Name */}
-          <Link
-            href="/"
-            className="text-white text-2xl font-bold hover:text-blue-400 transition-colors duration-300"
-          >
-            MyPortfolio
-          </Link>
+    <nav className="sticky top-0 z-50 bg-gray-900 shadow-lg border-b border-cyan-600/30 h-16">
+      <div className="container mx-auto flex justify-between items-center py-4 lg:py-5 px-4">
+        {/* Logo */}
+        <Logo />
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.url}
-                // Conditional styling for active link (Pages Router)
-                className={`text-white hover:text-blue-400 transition-colors duration-300 ${
-                  pathname === link.url
-                    ? "text-blue-400 border-b-2 border-blue-400"
-                    : ""
-                }`}
-                // Conditional styling for active link (App Router)
-                // className={`text-white hover:text-blue-400 transition-colors duration-300 ${
-                //   pathname === link.url ? "text-blue-400 border-b-2 border-blue-400" : ""
-                // }`}
-              >
-                {link.title}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button (Hamburger Icon) */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMobileMenu}
-              className="text-white focus:outline-none focus:text-blue-400"
-              aria-label="Toggle navigation"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.title}
+              href={link.url}
+              className={`transition-all duration-300 ${
+                pathname === link.url
+                  ? "text-cyan-400 border-b-2 border-cyan-400"
+                  : "text-gray-300 hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400"
+              }`}
             >
-              {isMobileMenuOpen ? (
-                // Close icon (X)
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              ) : (
-                // Hamburger icon
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              )}
-            </button>
-          </div>
+              {link.title}
+            </Link>
+          ))}
+          <button
+            className="bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-50 font-medium 
+          py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
+          >
+            Download Resume
+          </button>
         </div>
 
-        {/* Mobile Navigation (shown when isMobileMenuOpen is true) */}
-        <div
-          className={`md:hidden ${
-            isMobileMenuOpen ? "block" : "hidden"
-          } bg-gray-700 mt-4 rounded-md`}
-        >
-          <div className="flex flex-col space-y-3 p-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.url}
-                onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
-                // Conditional styling for active link (Pages Router)
-                className={`text-white hover:text-blue-300 transition-colors duration-300 text-lg ${
-                  pathname === link.url ? "text-blue-300 font-semibold" : ""
-                }`}
-                // Conditional styling for active link (App Router)
-                // className={`text-white hover:text-blue-300 transition-colors duration-300 text-lg ${
-                //   pathname === link.url ? "text-blue-300 font-semibold" : ""
-                // }`}
-              >
-                {link.title}
-              </Link>
-            ))}
-          </div>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-white focus:outline-none focus:text-cyan-400"
+            aria-label="Toggle navigation"
+          >
+            {isMobileMenuOpen ? (
+              <IoCloseSharp className="w-6 h-6" />
+            ) : (
+              <GiHamburgerMenu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`md:hidden ${
+          isMobileMenuOpen ? "block" : "hidden"
+        } bg-gray-800 mt-3 rounded-md shadow-md`}
+      >
+        <div className="flex flex-col space-y-3 p-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.title}
+              href={link.url}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`transition-all duration-300 text-lg ${
+                pathname === link.url
+                  ? "text-cyan-400 font-semibold"
+                  : "text-gray-300 hover:text-cyan-300"
+              }`}
+            >
+              {link.title}
+            </Link>
+          ))}
+          <button
+            className="bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-50 font-medium 
+          py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer"
+          >
+            Download Resume
+          </button>
         </div>
       </div>
     </nav>
