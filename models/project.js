@@ -58,27 +58,25 @@ const projectSchema = new mongoose.Schema(
       {
         type: String,
         trim: true,
-        required: [true, "Project feature description is required."], // Ensures each string isn't empty
-        minlength: [5, "Feature description too short."], // Added minlength
-        maxlength: [150, "Feature description too long."], // Added maxlength
+        required: [true, "Project feature description is required."],
+        minlength: [5, "Feature description too short."],
+        maxlength: [150, "Feature description too long."],
       },
     ],
     challenges: [
       {
         type: String,
         trim: true,
-        required: [true, "Project challenge description is required."], // Ensures each string isn't empty
-        minlength: [10, "Challenge description too short."], // Added minlength
-        maxlength: [200, "Challenge description too long."], // Added maxlength
+        required: [true, "Project challenge description is required."],
+        minlength: [10, "Challenge description too short."],
+        maxlength: [200, "Challenge description too long."],
       },
     ],
     techStack: [
       {
         type: String,
         trim: true,
-        required: [true, "Tech stack item is required."], // Ensures each string isn't empty
-        minlength: [1, "Tech stack item cannot be empty."], // Added minlength
-        maxlength: [50, "Tech stack item too long."], // Added maxlength
+        required: [true, "Tech stack item is required."],
       },
     ],
     liveLink: {
